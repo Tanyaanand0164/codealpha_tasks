@@ -1,0 +1,440 @@
+
+<html lang="en">
+<head
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <style>/* General Styles for the Site */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-nav {
+    font-size: 1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: #f8f9fa;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+}
+
+/* Skills Section */
+.skills-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-section li {
+    font-size: 1rem;
+}
+
+/* Education Section */
+.education-section h3 {
+    font-size: 1.5rem;
+}
+
+.education-section p {
+    font-size: 1.1rem;
+}
+
+/* Contact Section */
+.contact-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.contact-section .form-control {
+    border-radius: 8px;
+    box-shadow: none;
+    margin-bottom: 20px;
+}
+
+.contact-section .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Social Links */
+.social-links a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.social-links .btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.social-links .btn-outline-info:hover {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.social-links .btn-outline-dark:hover {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Scroll to Top Button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile (phones in portrait mode, up to 600px) */
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .skills-section h2, .education-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .skills-section ul, .education-section ul {
+        padding-left: 0;
+    }
+
+    .contact-section form {
+        padding: 20px;
+    }
+
+    .contact-section .form-label {
+        font-size: 0.9rem;
+    }
+
+    .social-links .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .navbar-nav {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet (600px to 768px) */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills-section h2, .education-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-section form {
+        padding: 15px;
+    }
+
+    .contact-section .form-label {
+        font-size: 1rem;
+    }
+
+    .social-links .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Desktop (above 768px) */
+@media (min-width: 768px) {
+    .navbar-nav {
+        font-size: 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .contact-section .form-control {
+        font-size: 1rem;
+    }
+
+    .social-links .btn {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Large Screens (Above 1024px) */
+@media (min-width: 1024px) {
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+
+    .contact-section .form-control {
+        font-size: 1.2rem;
+    }
+}
+
+</style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar navbar-expand-lg navbar-light bg-light" data-aos="fade-down">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+<marquee behavior="scroll" direction="left" scrollamount="5" bgcolor="grey" style="color: rgb(209, 17, 33); font-size: 30px;"> portfolio</marquee>
+<marquee behavior="scroll" direction="right" scrollamount="5" bgcolor="pink" style="color: rgb(14, 45, 219); font-size: 30px;">
+   Tanya
+  </marquee>
+  
+
+<section class="hero-section text-center py-5" data-aos="fade-up">
+    <h1>Tanya</h1>
+    <p>Web Developer | Designer | Programmer</p>
+    <a href="mailto:your-email@example.com" class="btn btn-primary">Contact Me</a>
+</section>
+<section class="skills-section py-5" id="skills" data-aos="fade-up">
+    <div class="container text-center">
+       <U> <h1>Skills</h1></U><BR>
+        <div class="row">
+            <div class="col-md-4 col-12">
+                <h3>Web Development</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    
+                </ul>
+            </div>
+            <div class="col-md-4 col-12">
+                <h3>UI/UX Design</h3>
+                <ul>
+                    <li>Figma</li>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-12">
+                <h3>Programming</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                    <li>c language</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="education-section py-5" id="education" data-aos="fade-up">
+    <div class="container text-center">
+        <U><h1>Education</h1></U><BR>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <h3>ARYA PG COLLEGE ,PANIPAT</h3>
+                <p>Bachelor of computer application</p>
+                <p>Graduated: 2025</p>
+            </div>
+            <div class="col-md-6 col-12">
+                <h3>KENDRIYA VIDHYALAYA</h3>
+                <p>12th</p>
+                <p>Graduated: 2022</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="projects-section py-5" data-aos="fade-up">
+    <div class="container text-center">
+        <u><h2>Featured Projects</h2></u><br>
+        <div class="row">
+            <div class="col-md-4 col-12">
+                <div class="project-card">
+                    <img src="C:\Users\T S P\Desktop\calculator.png" alt="Project 1" class="img-fluid">
+                    <h3>Project 1</h3>
+                    <p>the central aim of the project was to test the hypothesis that providing so-called calculators would improve students' performance in those parts of the undergraduate first-year that relied on formal reasoning skills.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="project-card"><br>
+                    <img src="C:\Users\T S P\Downloads\Screenshot 2025-02-07 001340 (4).jpg"alt="Project 2" class="img-fluid">
+                    <h3>project 2</h3>
+                    <p>a software application that provides information about the weather in a specific location and time. Weather apps use data from satellites, weather stations, and meteorological sources to provide forecasts and real-time updates</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="project-card">
+                    <img src="C:\Users\T S P\Downloads\Screenshot 2025-02-07 000924 (3).jpg" alt="Project 3" class="img-fluid">
+                    <h3>Project 3</h3>
+                    <p>we are going to implement a photo editor that allows users to apply various filters and effects to their images. This project will use HTML, CSS, and JavaScript to provide a user-friendly interface for adjusting brightness, contrast, grayscale, blur, sepia, and hue rotation filters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-section py-5" data-aos="fade-up">
+    <div class="container">
+        <h2 class="text-center">feed back</h2>
+        
+        <!-- Contact Form -->
+        <form action="#" method="POST" class="mx-auto" style="max-width: 600px;">
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Write your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+        <!-- Social Links -->
+        <div class="social-links text-center mt-4">
+            <h4>Connect with me:</h4>
+            <a href="mailto:tanyarani107.com" class="btn btn-outline-primary mx-2" title="Email">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://chat.whatsapp.com/IJ5gjAM7g7iK2PfvkAVBnq" class="btn btn-outline-success mx-2" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/your-profile" class="btn btn-outline-info mx-2" title="LinkedIn">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/your-" class="btn btn-outline-dark mx-2" title="GitHub">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-3">
+    <p>&copy; 2025 Tanya | All rights reserved</p>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#top" id="back-to-top" class="btn btn-primary">↑</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>// Initialize AOS (Animate On Scroll) library for animations
+AOS.init({
+    duration: 1200, // Duration for each animation
+    once: true, // Only trigger animation once
+});
+
+// Back to Top button functionality
+// Get the button
+const backToTopButton = document.getElementById('back-to-top');
+
+// When the user scrolls down 100px from the top of the document, show the button
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// When the user clicks the button, scroll to the top of the document
+backToTopButton.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Optional: Prevent default behavior for contact form (for now as a placeholder for actual backend functionality)
+const contactForm = document.querySelector('.contact-section form');
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent actual form submission (for now)
+        alert("Message sent (this is just a placeholder, you would typically handle form submission here).");
+    });
+}
+</script>
+<script>
+    AOS.init();
+</script>
+<script>
+// Scroll to top functionality
+const backToTopButton = document.getElementById("back-to-top");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+backToTopButton.addEventListener("click", function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>
