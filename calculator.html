@@ -1,0 +1,166 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        .calculator {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+            text-align: center;
+            width: 350px;
+        }
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            text-align: right;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            padding: 8px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .btn {
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            background: rgb(123, 9, 73);
+            color: white;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #d400d4;
+        }
+        .equal-btn {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: block;
+            margin-top: 10px;
+        }
+        .equal-btn:hover {
+            background: #d400d4;
+        }
+        .append-btn {
+            width: 100%;
+            height: 40px;
+            font-size: 1.2em;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .append-btn:hover {
+            background: darkgreen;
+        }
+        .extra-functions {
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .extra-functions button {
+            padding: 15px;
+            font-size: 1.2em;
+            background: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .extra-functions button:hover {
+            background: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="deleteLast()">⌫</button>
+            <button class="btn" onclick="appendToDisplay('(')">(</button>
+            <button class="btn" onclick="appendToDisplay(')')">)</button>
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn" onclick="appendToDisplay('/')">÷</button>
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn" onclick="appendToDisplay('*')">×</button>
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn" onclick="appendToDisplay('-')">−</button>
+            <button class="btn" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
+            <button class="btn" onclick="appendToDisplay('+')">+</button>
+            <button class="equal-btn" onclick="calculateResult()">=</button>
+        </div>
+        <button class="append-btn" onclick="toggleExtraFunctions()">Show Functions</button>
+        <div class="extra-functions" id="extraFunctions">
+            <button onclick="appendToDisplay('Math.sin(')">sin</button>
+            <button onclick="appendToDisplay('Math.cos(')">cos</button>
+            <button onclick="appendToDisplay('Math.tan(')">tan</button>
+            <button onclick="appendToDisplay('Math.sqrt(')">√</button>
+            <button onclick="appendToDisplay('Math.pow(,2)')">x²</button>
+            <button onclick="appendToDisplay('Math.pow(,3)')">x³</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById("display");
+        function appendToDisplay(value) {
+            display.value += value;
+        }
+        function clearDisplay() {
+            display.value = "";
+        }
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch {
+                display.value = "Error";
+            }
+        }
+        function toggleExtraFunctions() {
+            let extraFunctions = document.getElementById("extraFunctions");
+            extraFunctions.style.display = extraFunctions.style.display === "none" || extraFunctions.style.display === "" ? "grid" : "none";
+        }
+    </script>
+</body>
+</html>
